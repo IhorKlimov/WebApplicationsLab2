@@ -74,7 +74,7 @@ function changeHTMLPStyleProperty() {
 }
 
 function disableHTMLPStyleProperty() {
-    let reversedCookie = JSON.parse(getCookie("pHTMLCSS"));
+    let reversedCookie = JSON.parse(localStorage.getItem("pHTMLCSS"));
 
     document.querySelectorAll(reversedCookie.tag).forEach(element => {
         element.style[reversedCookie.property] = null;
