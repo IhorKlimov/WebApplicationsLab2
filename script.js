@@ -58,6 +58,33 @@ function reverseNumber() {
     return false;
 }
 
+function changeHTMLPStyleProperty() {
+    const tag = document.forms["changeStyle"]["changeStyleTag"].value;
+    const property = document.forms["changeStyle"]["changeStyleProperty"].value;
+    const value = document.forms["changeStyle"]["changeStyleValue"].value;
+
+    document.querySelectorAll(tag).forEach(element => {
+        element.style[property] = value;
+    });
+
+    const data = {"tag": tag, "property": property, "value": value};
+    document.cookie = "pHTMLCSS=" + JSON.stringify(data);
+
+    return false;
+}
+
+function disableHTMLPStyleProperty() {
+    let reversedCookie = JSON.parse(getCookie("pHTMLCSS"));
+
+    document.querySelectorAll(reversedCookie.tag).forEach(element => {
+        element.style[reversedCookie.property] = null;
+    });
+
+    document.cookie = "pHTMLCSS=;expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+
+    return true;
+}
+
 function setBorderColor() {
     const color = document.forms["borderColor"]["color"].value;
     alert(color);

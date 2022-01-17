@@ -92,6 +92,18 @@
                     <div>
                         <button type="button" onclick="disableCSSFor(this)">2</button>
                     </div>
+
+                    <form name="changeStyle">
+                        <label for="color">Change CSS properties of HTML tags</label><br>
+                        <label for="changeStyleTag">Tag:</label><br>
+                        <input type="text" id="changeStyleTag" name="changeStyleTag"><br>
+                        <label for="changeStyleProperty">Property:</label><br>
+                        <input type="text" id="changeStyleProperty" name="changeStyleProperty"><br>
+                        <label for="changeStyleValue">Value:</label><br>
+                        <input type="text" id="changeStyleValue" name="changeStyleValue"><br>
+                        <button type='button' onclick="changeHTMLPStyleProperty()">1</button>
+                    </form>
+                    <button onclick="disableHTMLPStyleProperty()">2</button>
                 </div>
                 <div class="six">
                     <div class="title">6</div>
