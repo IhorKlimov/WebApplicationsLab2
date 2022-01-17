@@ -68,7 +68,7 @@ function changeHTMLPStyleProperty() {
     });
 
     const data = {"tag": tag, "property": property, "value": value};
-    document.cookie = "pHTMLCSS=" + JSON.stringify(data);
+    localStorage.setItem('pHTMLCSS', JSON.stringify(data));
 
     return false;
 }
@@ -80,7 +80,7 @@ function disableHTMLPStyleProperty() {
         element.style[reversedCookie.property] = null;
     });
 
-    document.cookie = "pHTMLCSS=;expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+    localStorage.removeItem(pHTMLCSS);
 
     return true;
 }
